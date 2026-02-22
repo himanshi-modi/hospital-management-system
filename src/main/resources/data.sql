@@ -1,0 +1,28 @@
+INSERT INTO patient(
+    name,
+    gender,
+    birthdate,
+    email,
+    blood_group
+) VALUES
+      ('Amit Sharma', 'Male', '1995-06-15', 'amit.sharma@gmail.com', 'O_POSITIVE'),
+      ('Neha Verma', 'Female', '1998-02-20', 'neha.verma@gmail.com', 'A_POSITIVE'),
+      ('Rahul Singh', 'Male', '1992-11-05', 'rahul.singh@gmail.com', 'B_NEGATIVE'),
+      ('Priya Mehta', 'Female', '2000-08-12', 'priya.mehta@gmail.com', 'AB_POSITIVE'),
+      ('Karan Patel', 'Male', '1997-01-30', 'karan.patel@gmail.com', 'O_NEGATIVE');
+
+INSERT INTO doctor(
+    name,
+    specialization,
+    email
+
+) VALUES
+      ('Dr.Rakesh Mehta', 'Cardiologist', 'rakeshmehta@gmail.com'),
+      ('Dr.Sneha Kapoor', 'Dermatology', 'snehakappor@gmail.com'),
+      ('Dr.Arjun Nair', 'Orthopedics', 'arjunnair@gmail.com');
+
+INSERT INTO appointment (appointment_time, reason, doctor_id, patient_id)
+VALUES
+    ('2023-12-02 14:00:00', 'Cancer', 1, 2),
+    ('2023-12-03 10:30:00', 'Heart Checkup', 3, 4),
+    ('2023-12-04 16:15:00', 'Diabetes Review', 2, 1);
