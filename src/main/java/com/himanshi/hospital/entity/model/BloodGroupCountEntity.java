@@ -1,4 +1,4 @@
-package com.himanshi.hospital.dto;
+package com.himanshi.hospital.entity.model;
 
 import com.himanshi.hospital.entity.enums.BloodGroupType;
 import lombok.AllArgsConstructor;
@@ -12,6 +12,6 @@ import lombok.ToString;
 @ToString
 public class BloodGroupCountEntity {
     private BloodGroupType bloodGroupType;
-    private Long id;
+    private Long count;
 
 }

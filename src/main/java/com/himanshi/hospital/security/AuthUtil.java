@@ -66,15 +66,20 @@ public class AuthUtil {
 
 
     public String getProviderId(String registrationId, OAuth2User oAuth2User) {
-        String providerId= switch (registrationId.toLowerCase()){
-            case "google"->oAuth2User.getAttribute("sub");
-            case "github"->oAuth2User.getAttribute("id");
-            default -> throw new IllegalArgumentException("Unsupported oAuth2 provider: "+registrationId);
+        System.out.println("ATTRIBUTES: " + oAuth2User.getAttributes());
+        Object id = switch (registrationId.toLowerCase()) {
+            case "google" -> oAuth2User.getAttribute("sub");
+            case "github" -> oAuth2User.getAttribute("id");
+            default -> throw new IllegalArgumentException(
+                    "Unsupported oAuth2 provider: " + registrationId);
         };
-        if(providerId==null || providerId.isBlank()){
-            throw new IllegalArgumentException("Unable to determine providerId for oAuth2 login");
+
+        if (id == null) {
+            throw new IllegalArgumentException(
+                    "Unable to determine providerId for oAuth2 login");
         }
-        return providerId;
+
+        return String.valueOf(id);
     }
 
     public String getUsernameForAuthUser(AuthProviderType authProviderType, OAuth2User oAuth2User) {

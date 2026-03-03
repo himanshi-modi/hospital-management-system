@@ -3,21 +3,15 @@ package com.himanshi.hospital.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jspecify.annotations.Nullable;
-
-import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignupRequestDto {
+public class DoctorRequestDto {
+    private String username;
     private String email;
     private String password;
-    private String username;
 
     private String name;
-    private LocalDate birthdate;
-    private String gender;
-
-
+    private String specialization;
 }

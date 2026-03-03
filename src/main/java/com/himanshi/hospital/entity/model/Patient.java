@@ -2,9 +2,7 @@ package com.himanshi.hospital.entity.model;
 
 import com.himanshi.hospital.entity.enums.BloodGroupType;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,6 +13,9 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(
 
         uniqueConstraints = {
@@ -30,15 +31,12 @@ import java.util.List;
 public class Patient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false ,length = 40)
     private String name;
 
-    @Column(unique = true,nullable = false )
-    private String email;
-
+    @Column(name = "birthdate")
     private LocalDate birthdate;
 
     private String gender;
@@ -48,6 +46,11 @@ public class Patient {
 
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="id", nullable = false, unique = true)
+    private User user;
 
     @OneToOne(cascade={CascadeType.ALL},orphanRemoval = true)
     private Insurance insurance;

@@ -6,3 +6,9 @@ spring:
           google:
             client-id: 506373172862-00mnnlc4doigpq88tauqlv6k4qh1qi1s.apps.googleusercontent.com
             client-secret: ${OAUTH_CLIENT_SECRET}
+          github:
+            client-id: Ov23liOoqedmCdzFzhHC
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope:
+              - read:user
+              - user:email

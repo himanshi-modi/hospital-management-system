@@ -1,8 +1,7 @@
 package com.himanshi.hospital.entity.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,19 +10,24 @@ import java.util.Set;
 
 @Entity
 @Data
+@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class Doctor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false,length = 100)
     private String name;
 
-    @Column(length = 100)
+    @Column(length = 100,nullable = false)
     private String specialization;
 
-    @Column(nullable = false,length = 100,unique=true)
-    private String email;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="id", nullable = false, unique = true)
+    private User user;
 
     @ManyToMany(mappedBy = "doctors")
     @ToString.Exclude

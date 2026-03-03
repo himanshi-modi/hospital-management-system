@@ -37,6 +37,7 @@ public class OAuthLoginService {
             // Already linked → login
             user = oauthAccountOptional.get().getUser();
         } else {
+            System.out.println("ATTRIBUTES: " + oAuth2User.getAttributes());
             // Step 2: Check if any user exists with same email
             String email = oAuth2User.getAttribute("email");
             if (email == null || email.isBlank()) {
