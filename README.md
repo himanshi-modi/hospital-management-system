@@ -1,4 +1,4 @@
-# 🏥 Hospital Management System
+# Hospital Management System
 
 A production-ready Spring Boot backend application for managing hospital operations including patients, doctors, authentication, and role-based access control.
 
@@ -6,7 +6,7 @@ Built with secure authentication, Dockerized infrastructure, and PostgreSQL data
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Java 21
 - Spring Boot
@@ -20,7 +20,7 @@ Built with secure authentication, Dockerized infrastructure, and PostgreSQL data
 
 ---
 
-## 🏗 Features
+## Features
 
 - JWT-based authentication
 - OAuth2 login (Google & GitHub)
@@ -32,7 +32,7 @@ Built with secure authentication, Dockerized infrastructure, and PostgreSQL data
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -47,7 +47,7 @@ src/
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -59,20 +59,20 @@ GITHUB_CLIENT_SECRET=your_github_secret
 SPRING_PROFILES_ACTIVE=prod
 ```
 
-⚠️ Do NOT commit `.env` to GitHub.
+ 
 
 ---
 
 ## 🐳 Running with Docker (Recommended)
 
-### 1️⃣ Clone Repository
+### 1.Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/hospital-management-system.git
 cd hospital-management-system
 ```
 
-### 2️⃣ Create `.env`
+### 2. Create `.env`
 
 Copy example:
 
@@ -82,7 +82,7 @@ cp .env.example .env
 
 Update values inside `.env`.
 
-### 3️⃣ Build & Run
+### 3.Build & Run
 
 ```bash
 docker compose up --build
@@ -96,15 +96,15 @@ http://localhost:8080/api/v1
 
 ---
 
-## 🛠 Running Without Docker
+## Running Without Docker
 
-### 1️⃣ Build Project
+### 1. Build Project
 
 ```bash
 mvn clean package -DskipTests
 ```
 
-### 2️⃣ Run Application
+### 2. Run Application
 
 ```bash
 java -jar target/hospital-management-0.0.1-SNAPSHOT.jar
@@ -112,7 +112,7 @@ java -jar target/hospital-management-0.0.1-SNAPSHOT.jar
 
 ---
 
-## 🗄 Database Configuration
+##  Database Configuration
 
 - Database: PostgreSQL 15
 - Container Name: hospital-db
@@ -121,7 +121,7 @@ java -jar target/hospital-management-0.0.1-SNAPSHOT.jar
 
 ---
 
-## 🔐 Security Architecture
+## Security Architecture
 
 - Stateless session management
 - JWT token validation filter
@@ -131,7 +131,7 @@ java -jar target/hospital-management-0.0.1-SNAPSHOT.jar
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 - Swagger / OpenAPI documentation
 - Flyway database migrations
@@ -141,19 +141,19 @@ java -jar target/hospital-management-0.0.1-SNAPSHOT.jar
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Himanshi Modi  
 Backend Developer | Java | Spring Boot | Security | Docker
 
 ---
 
-## ⭐ Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
